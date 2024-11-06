@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Learning Platform</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header, footer {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+        nav {
+            margin: 20px 0;
+            text-align: center;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #4CAF50;
+            cursor: pointer;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: url('hero-image.jpg') center/cover no-repeat;
+            height: 60vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Container and Sections */
+        .container {
+            padding: 20px;
+        }
+        section {
+            display: none;
+            margin: 20px 0;
+        }
+        
+        /* Testimonials Section */
+        #testimonials {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .testimonial {
+            border-left: 4px solid #4CAF50;
+            padding-left: 10px;
+            margin-bottom: 15px;
+        }
+
+        /* Social Sharing Buttons */
+        .social-sharing {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .social-sharing a {
+            color: #4CAF50;
+            text-decoration: none;
+            margin: 0 5px;
+            padding: 5px 10px;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .social-sharing a:hover {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 400px;
+        }
+
+        /* Dark Mode Styling */
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        .dark-mode header, .dark-mode footer {
+            background-color: #222;
+        }
+        .dark-mode a {
+            color: #4CAF50;
+        }
+        .dark-mode .modal-content {
+            background-color: #444;
+            color: #fff;
+        }
+
+        /* Mobile-Friendly Design */
+        @media (max-width: 600px) {
+            header, footer {
+                padding: 10px;
+            }
+            .container {
+                padding: 10px;
+            }
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+            .hero-section {
+                height: 40vh;
+            }
+            .modal-content {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Welcome to Our Interactive Learning Platform</h1>
+</header>
+
+<nav>
+    <a onclick="toggleSection('about')">About</a>
+    <a onclick="toggleSection('services')">Services</a>
+    <a onclick="toggleSection('contact')">Contact</a>
+    <a onclick="toggleSection('join')">Join Us</a>
+    <a onclick="toggleSection('testimonials')">Testimonials</a>
+</nav>
+
+<div class="hero-section">
+    <h2>Empowering Connections and Learning</h2>
+</div>
+
+<div class="container">
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We connect people interested in learning languages and discussing current affairs, helping them expand their knowledge and perspectives.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Services</h2>
+        <button class="button" onclick="startChatOrVideo('Chat')">Chat</button>
+        <button class="button" onclick="startChatOrVideo('Video Call')">Video Call</button>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p><strong>Email:</strong> <a href="mailto:manik.bansal2103@gmail.com">manik.bansal2103@gmail.com</a></p>
+        <p><strong>Phone:</strong> +91 8950507472</p>
+    </section>
+
+    <!-- Join Us Section -->
+    <section id="join">
+        <h2>Join Us</h2>
+        <form id="joinUsForm">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <input type="text" placeholder="Contact Number">
+            <textarea placeholder="Message" rows="4"></textarea>
+            <button type="button" class="button" onclick="submitForm()">Submit</button>
+        </form>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <h2>User Testimonials</h2>
+        <div class="testimonial">
+            <p>"This platform has helped me connect with people around the world and improve my language skills!"</p>
+            <p><strong>- Aditi, India</strong></p>
+        </div>
+        <div class="testimonial">
+            <p>"The community here is amazing! I've learned so much about different cultures and perspectives."</p>
+            <p><strong>- Carlos, Spain</strong></p>
+        </div>
+    </section>
+
+    <!-- Chat and Video Service Placeholder -->
+    <section id="servicePlaceholder" style="display: none;">
+        <h2>Connecting...</h2>
+        <p>Please wait while we connect you to the chat or video service.</p>
+        <button class="button" onclick="closeService()">Cancel</button>
+    </section>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="serviceModal">
+    <div class="modal-content">
+        <h2 id="modalTitle">Starting Service...</h2>
+        <button class="button" onclick="closeModal()">Close</button>
+    </div>
+</div>
+
+<!-- Social Sharing Buttons -->
+<div class="social-sharing">
+    <p>Share with friends:</p>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=yourwebsite.com" target="_blank">Facebook</a> |
+    <a href="https://twitter.com/intent/tweet?url=yourwebsite.com&text=Check%20this%20out!" target="_blank">Twitter</a> |
+    <a href="https://www.linkedin.com/shareArticle?mini=true&url=yourwebsite.com" target="_blank">LinkedIn</a>
+</div>
+
+<footer>
+    <p>&copy; 2024 Interactive Learning Platform</p>
+</footer>
+
+<script>
+    function toggleSection(sectionId) {
+        document.querySelectorAll('section').forEach(section => section.style.display = 'none');
+        document.getElementById(sectionId).style.display = 'block';
+    }
+
+    function startChatOrVideo(service) {
+        document.getElementById('services').style.display = 'none';
+        document.getElementById('servicePlaceholder').style.display = 'block';
+        document.getElementById('servicePlaceholder').querySelector('h2').textContent = `Starting ${service}...`;
+    }
+
+    function closeService() {
+        document.getElementById('servicePlaceholder').style.display = 'none';
+        document.getElementById('services').style.display = 'block';
+    }
+
+    function submitForm() {
+        alert("Thank you for joining us! We will get back to you soon.");
+    }
+
+    function startService(serviceType) {
+        document.getElementById('modalTitle').innerText = `Connecting you for ${serviceType}...`;
+        document.getElementById('serviceModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+        document.getElementById('serviceModal').style.display = 'none';
+    }
+
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+    }
+</script>
+
+</body>
+</html>

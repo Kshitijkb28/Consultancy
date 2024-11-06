@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultancy Firm</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            display: flex;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 200px;
+            background-color: #0077b6;
+            color: #fff;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-top: 2em;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 1em;
+            font-size: 1.2em;
+        }
+
+        .sidebar nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .sidebar nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5em 0;
+            width: 100%;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .sidebar nav a:hover {
+            background-color: #005f87;
+        }
+
+        /* Header */
+        header {
+            background-color: #0077b6;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 200px;
+            width: calc(100% - 200px);
+            z-index: 1000;
+        }
+
+        /* Main Container */
+        .container {
+            margin-left: 220px;
+            padding-top: 5em;
+            width: calc(100% - 220px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        section {
+            width: 100%;
+            max-width: 1000px;
+            margin-bottom: 2em;
+            padding: 2em;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: none; /* Hide all sections initially */
+        }
+
+        section.active {
+            display: block;
+        }
+
+        h2 {
+            color: #0077b6;
+            margin-bottom: 0.5em;
+        }
+
+        /* Image Slideshow for About Section */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            height: 300px;
+            margin-top: 1em;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1em;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            left: 200px;
+            width: calc(100% - 200px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Consultancy</h2>
+    <nav>
+        <a href="#home" onclick="showSection('home')">Home</a>
+        <a href="#about" onclick="showSection('about')">About</a>
+        <a href="#services" onclick="showSection('services')">Services</a>
+        <a href="#contact" onclick="showSection('contact')">Contact Us</a>
+    </nav>
+</div>
+
+<header>
+    <h1>Welcome to Our Consultancy Firm</h1>
+</header>
+
+<div class="container">
+
+    <!-- Home Section -->
+    <section id="home" class="active">
+        <h2>Home</h2>
+        <p>Welcome to [Consultancy Firm Name], where we empower businesses to achieve their highest potential. Our services are tailored to help you meet your unique challenges and achieve sustainable growth.</p>
+        <p>With a team of experts, we provide strategic guidance, market insights, and hands-on support. Discover how we can make a difference to your organization today!</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>Explore our range of services, each designed to help you meet your business objectives:</p>
+        <ul>
+            <li><strong>Business Strategy:</strong> Formulating winning strategies for sustainable growth.</li>
+            <li><strong>Market Analysis:</strong> In-depth research and analytics to inform your decisions.</li>
+            <li><strong>Operational Optimization:</strong> Streamlining processes for maximum efficiency.</li>
+            <li><strong>Digital Transformation:</strong> Leveraging technology to drive your business forward.</li>
+        </ul>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a team of experienced professionals providing tailored consultancy services across various industries. Our mission is to drive growth and deliver valuable insights to our clients.</p>
+        <p>We believe in forging lasting partnerships and ensuring our clients’ success through strategic solutions and dedicated support. Our approach combines industry expertise, cutting-edge technology, and a focus on results.</p>
+
+        <!-- Slideshow -->
+        <div class="slideshow-container">
+            <div class="slide active">
+                <img src="https://via.placeholder.com/1000x300/0077b6/fff?text=Our+Team" alt="Our Team" style="width:100%; height:100%;">
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/1000x300/004c7b/fff?text=Consultation+Process" alt="Consultation Process" style="width:100%; height:100%;">
+            </div>
+            <div class="slide">
+                <img src="https://via.placeholder.com/1000x300/00395a/fff?text=Successful+Projects" alt="Successful Projects" style="width:100%; height:100%;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>For inquiries, reach out to us through the contact form below. We’re excited to learn more about your business needs and explore how we can support your goals.</p>
+        <p>Email: contact@consultancyfirm.com | Phone: +123 456 7890</p>
+    </section>
+
+</div>
+
+<footer>
+    <p>&copy; 2024 Consultancy Firm. All Rights Reserved.</p>
+</footer>
+
+<script>
+    // Function to show only the selected section
+    function showSection(sectionId) {
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.remove('active');
+        });
+        document.getElementById(sectionId).classList.add('active');
+    }
+
+    // Slideshow functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.remove("active");
+            if (i === index) slide.classList.add("active");
+        });
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }
+
+    // Set slideshow interval
+    setInterval(nextSlide, 3000); // Change slide every 3 seconds
+</script>
+
+</body>
+</html>
