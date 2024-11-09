@@ -1,0 +1,49 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero {
+    background: #2c3e50;
+    padding: 100px 0;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+}
+
+.hero .btn {
+    font-size: 1.2rem;
+    padding: 10px 30px;
+    border-radius: 30px;
+}
+
+/* About Section */
+#about img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+/* Projects Section */
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Skills Section */
+.progress-bar {
+    background-color: #3498db;
+}
+
+/* Footer Section */
+footer {
+    background-color: #333;
+}
