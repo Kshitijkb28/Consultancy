@@ -3,17 +3,217 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kshitij - Portfolio</title>
+    <meta name="description" content="Web Solutions Consultancy - Experts in web development, AI integration, Shopify, and e-commerce solutions.">
+    <meta name="keywords" content="web development, AI integration, Shopify, e-commerce, web consultancy, digital solutions">
+    <title>Web Solutions Consultancy - Your Trusted Web Development Partner</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    
     <!-- Custom CSS -->
     <link href="assets/css/styles.css" rel="stylesheet">
+    
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/img/hero-bg.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 80px 0;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .hero .btn {
+            font-size: 1.1rem;
+            padding: 12px 30px;
+            border-radius: 50px;
+        }
+
+        /* Card Styling */
+        .card {
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .card-text {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: #333;
+            padding: 20px 0;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-size: 1.1rem;
+            padding: 10px 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            background-color: #007bff;
+            border-radius: 5px;
+        }
+
+        /* Special Offers Section */
+        .offer-card {
+            border-radius: 10px;
+            background-color: #f8f9fa;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            transition: transform 0.3s ease;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .offer-card h5 {
+            font-size: 1.4rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .text-cream {
+            color: aliceblue;
+        }
+        .offer-card p {
+            color: #777;
+            font-size: 1.1rem;
+        }
+
+        .offer-card .btn {
+            border-radius: 50px;
+            padding: 12px 20px;
+        }
+
+        /* Testimonials Section */
+        .testimonial-blockquote {
+            background-color: #f8f9fa;
+            border-left: 5px solid #007bff;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .testimonial-blockquote:hover {
+            background-color: #f1f5f9;
+        }
+
+        .testimonial-blockquote footer {
+            font-size: 1rem;
+            color: #007bff;
+            font-weight: 500;
+        }
+
+        .testimonial-blockquote p {
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        /* Animations */
+        .fade-in {
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Button Hover Effects */
+        .btn:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px 0;
+        }
+        footer a {
+            color: #007bff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        .background-card{
+            color: #fff;
+            background-color: #d9e6f4;
+            border-radius: 10px;
+
+        }
+    </style>
 </head>
 <body>
+
     <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">Kshitij Bhardwaj</a>
+            <a class="navbar-brand" href="#">Web Solutions Consultancy</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -23,10 +223,16 @@
                         <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
+                        <a class="nav-link" href="#services">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
+                        <a class="nav-link" href="#projects">Freelance Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#offers">Special Offers</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonials">Testimonials</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -37,63 +243,60 @@
     </nav>
 
     <!-- Hero Section -->
-    <header class="hero text-center text-white">
+    <header class="hero fade-in">
         <div class="container">
-            <h1 class="display-4">Hi, I'm Kshitij Bhardwaj</h1>
-            <p class="lead">A passionate web developer with expertise in front-end technologies.</p>
-            <a href="#about" class="btn btn-primary btn-lg">Learn More About Me</a>
+            <h1 class="display-4">We Build Digital Solutions That Drive Business Growth</h1>
+            <p class="lead">Your trusted web consultancy partner for exceptional web development and digital solutions.</p>
+            <a href="#about" class="btn btn-primary btn-lg">Discover Our Services</a>
         </div>
     </header>
 
     <!-- About Section -->
-    <section id="about" class="py-5">
+    <section id="about" class="py-5 fade-in">
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <img src="assets/img/profile.jpg" alt="Your Name" class="img-fluid rounded-circle">
+                    <img src="assets/img/team.png" alt="Our Team" class="img-fluid rounded-circle h-2">
                 </div>
                 <div class="col-md-8">
-                    <h2>About Me</h2>
+                    <h2>About Us</h2>
                     <p>
-                        I am a passionate and dedicated web developer with experience in HTML, CSS, JavaScript, and modern front-end frameworks like React and Angular. I enjoy turning creative ideas into functional and visually appealing websites. I'm always learning and exploring new technologies.
+                        At Web Solutions Consultancy, we are a team of passionate and experienced web developers and digital strategists committed to delivering top-notch web solutions. We specialize in designing and developing websites that not only look great but are also optimized for performance and user experience. Whether you're a startup or an established business, we help you leverage the power of the web to grow your brand and reach new audiences.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="bg-light py-5">
+    <!-- Services Section -->
+    <section id="services" class="bg-light py-5 fade-in">
         <div class="container">
-            <h2 class="text-center">My Projects</h2>
+            <h2 class="text-center">Our Services</h2>
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="assets/img/project1.jpg" class="card-img-top" alt="Project 1">
                         <div class="card-body">
-                            <h5 class="card-title">Project Title</h5>
-                            <p class="card-text">Description of the project.</p>
-                            <a href="#" class="btn btn-primary">View Project</a>
+                            <h5 class="card-title">Web Development</h5>
+                            <p class="card-text">We create custom websites that are mobile-friendly, fast, and tailored to your business goals.</p>
+                            <a href="#contact" class="btn btn-primary">Get in Touch</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="assets/img/project2.jpg" class="card-img-top" alt="Project 2">
                         <div class="card-body">
-                            <h5 class="card-title">Project Title</h5>
-                            <p class="card-text">Description of the project.</p>
-                            <a href="#" class="btn btn-primary">View Project</a>
+                            <h5 class="card-title">E-commerce Solutions</h5>
+                            <p class="card-text">Our team builds secure, scalable e-commerce platforms to help you sell online effectively.</p>
+                            <a href="#contact" class="btn btn-primary">Request a Quote</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="assets/img/project3.jpg" class="card-img-top" alt="Project 3">
                         <div class="card-body">
-                            <h5 class="card-title">Project Title</h5>
-                            <p class="card-text">Description of the project.</p>
-                            <a href="#" class="btn btn-primary">View Project</a>
+                            <h5 class="card-title">AI Integration</h5>
+                            <p class="card-text">We integrate AI tools and solutions into your website to enhance user experience and increase conversions.</p>
+                            <a href="#contact" class="btn btn-primary">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -101,62 +304,97 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-5">
+    <!-- Special Offers Section -->
+    <section id="offers" class="py-5 fade-in">
         <div class="container">
-            <h2 class="text-center">Skills</h2>
+            <h2 class="text-center">Limited-Time Offers</h2>
+            <div class="row">
+                <!-- Offer 1 -->
+                <div class="col-md-6">
+                    <div class="offer-card p-4">
+                        <h5>Launch Your Website</h5>
+                        <p>Get a fully responsive, professional website designed at an exclusive price. <strong>Save 30%!</strong></p>
+                        <a href="#contact" class="btn btn-outline-primary">Claim Offer</a>
+                    </div>
+                </div>
+                <!-- Offer 2 -->
+                <div class="col-md-6">
+                    <div class="offer-card p-4">
+                        <h5>E-commerce Development</h5>
+                        <p>Start your online store today with a feature-rich, secure e-commerce platform. <strong>Save 33%!</strong></p>
+                        <a href="#contact" class="btn btn-outline-primary">Claim Offer</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="bg-light py-5 fade-in">
+        <div class="container">
+            <h2 class="text-center">Client Testimonials</h2>
             <div class="row">
                 <div class="col-md-4">
-                    <h5>HTML</h5>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 90%"></div>
-                    </div>
+                    <blockquote class="testimonial-blockquote">
+                        <p>"Web Solutions Consultancy helped us create a stunning website that has driven more traffic and conversions. Highly recommended!"</p>
+                        <footer class="background-card">- Jane Doe, CEO of Tech Innovators</footer>
+                    </blockquote>
                 </div>
                 <div class="col-md-4">
-                    <h5>CSS</h5>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 85%"></div>
-                    </div>
+                    <blockquote class="testimonial-blockquote">
+                        <p>"The team was incredibly knowledgeable and professional. Our e-commerce platform runs smoothly and has brought us more customers."</p>
+                        <footer class="background-card">- John Smith, Founder of Digital Goods</footer>
+                    </blockquote>
                 </div>
                 <div class="col-md-4">
-                    <h5>JavaScript</h5>
-                    <div class="progress">
-                        <div class="progress-bar" style="width: 80%"></div>
-                    </div>
+                    <blockquote class="testimonial-blockquote">
+                        <p>"Thanks to their AI integration, our website feels smarter and more engaging. We're seeing improved customer interaction."</p>
+                        <footer class="background-card">- Emma Brown, Marketing Director at Global Brands</footer>
+                    </blockquote>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="bg-dark text-white py-5">
+    <section id="contact" class="bg-dark text-white py-5 fade-in">
         <div class="container">
-            <h2 class="text-center">Contact Me</h2>
-            <form action="#" method="post">
+            <h2 class="text-center text-cream">Get In Touch</h2>
+            <p class="text-center">We'd love to hear from you. Reach out for consultations, quotes, or general inquiries. Let's work together!</p>
+            <form action="#" method="post" class="mt-4">
                 <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" required>
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" required placeholder="Enter your name">
                 </div>
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="email" required>
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" required placeholder="Enter your email">
                 </div>
                 <div class="mb-3">
-                    <label for="message" class="form-label">Message</label>
-                    <textarea class="form-control" id="message" rows="4" required></textarea>
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea class="form-control" id="message" rows="4" required placeholder="Write your message here"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Send Message</button>
             </form>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer class="bg-dark text-white text-center py-4">
-        <p>&copy; 2024 Kshitij Bhardwaj. All Rights Reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 Web Solutions Consultancy. All Rights Reserved.</p>
+            <p>Follow us on:
+                <a href="https://linkedin.com" class="text-white" target="_blank">LinkedIn</a> |
+                <a href="https://github.com" class="text-white" target="_blank">GitHub</a> |
+                <a href="https://twitter.com" class="text-white" target="_blank">Twitter</a>
+            </p>
+        </div>
     </footer>
 
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>
+
